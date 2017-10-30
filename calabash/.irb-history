@@ -1,0 +1,15 @@
+reinstall_apps
+start_test_server_in_background
+reinstall_apps
+start_test_server_in_background
+query("button")
+query("button");
+query("button");
+query("button")
+query("fabAddTask")
+query("fabAddTask")
+query("button id:fabAddTask")
+query("view id:fabAddTask")
+query("view id:'fabAddTask'")
+query("fab id:'fabAddTask'")
+query("android.widget.TextView")
