@@ -49,7 +49,7 @@ public class AddEditTaskPresenterTest {
     public void saveNewTaskToRepositoryAndShowsSuccessMessageUi() {
         mAddEditTaskPresenter = new AddEditTaskPresenter(
                 null, mTasksRepository, mAddEditTaskView, true);
-        mAddEditTaskPresenter.saveTask("New Task Title", "Some Task Description");
+        mAddEditTaskPresenter.saveTask("New Task Title", null);
         verify(mTasksRepository).saveTask(any(Task.class));
         verify(mAddEditTaskView).showTasksList();
     }
