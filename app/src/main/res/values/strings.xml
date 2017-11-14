@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">TO-DO</string>
+    <string name="app_name">TODO APP</string>
     <string name="add_task">New TO-DO</string>
     <string name="edit_task">Edit TO-DO</string>
     <string name="task_marked_complete">Task marked complete</string>
