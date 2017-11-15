@@ -30,7 +30,7 @@ class AddEditTaskActivity : AppCompatActivity() {
         setPresenter(savedInstanceState, taskId, repository, view)
     }
 
-    private fun setPresenter(savedInstanceState: Bundle?, taskId: String?,
+    fun setPresenter(savedInstanceState: Bundle?, taskId: String?,
                              repository: TasksRepository, view: AddEditTaskContract.View) {
         var shouldLoadData = true
         if (savedInstanceState != null) {

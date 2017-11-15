@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'pl.droidsonroids.pitest'
 
 android {
 
@@ -40,7 +41,14 @@ android {
             events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
         }
     }
+
     buildToolsVersion '26.0.2'
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 
 }
 
@@ -61,6 +69,7 @@ dependencies {
     testCompile "junit:junit:$rootProject.ext.junitVersion"
     testCompile "org.mockito:mockito-all:$rootProject.ext.mockitoVersion"
     testCompile "org.hamcrest:hamcrest-all:$rootProject.ext.hamcrestVersion"
+    testCompile "org.robolectric:robolectric:$rootProject.ext.roboElectricVersion"
     androidTestCompile "com.android.support.test:runner:$rootProject.ext.runnerVersion"
     androidTestCompile "com.android.support.test:rules:$rootProject.ext.runnerVersion"
     androidTestCompile "android.arch.persistence.room:testing:$rootProject.roomVersion"
@@ -82,4 +91,12 @@ dependencies {
 
 repositories {
     mavenCentral()
+}
+
+pitest {
+    targetClasses = ['com.example.todoapp.*']
+    threads = 5
+    outputFormats = ['HTML']
+    timeoutConstInMillis = 20000
+    verbose = true
 }
